@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLALIM Connection</title>
+    <link rel="icon" type="image/png" sizes="96x96" th:src="@{/img/faviconSolalim.png}">
+    <!-- JAVSCRIPT -->
+    <script async th:src="@{/js/connexion.js}"></script>
+    <script async th:src="@{/js/ScriptCommun.js}"></script>
+    <!-- Font ROBOTO -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <!-- font OSWALD -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <!-- feuille de style CSS -->
+    <link rel="stylesheet" th:href="@{/css/StyleCommun.css}">
+    <link rel="stylesheet" th:href="@{/css/Connexion.css}">
+
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Librairie AWESONE -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+</head>
+<body class="body-dark">
+<!--!PAGE PRINCIPALE-->
+
+<div id="page" class = "container ">
+
+    <!--! HEADER PAGE PRINCIPALE -->
+
+    <div id="rowPage" class="row ">
+
+        <div class="container ">
+            <div class="row text-end m-2">
+                <div class=" d-flex justify-content-end align-items-center">
+                    <input type="checkbox" id="switch"><label id="butSwitch" for="switch"></label>
+                </div>
+            </div>
+            <div id="ContainerTitrePage" class="container col-12">
+                <div class="row">
+                    <div class="col-4 text-end">
+                        <a th:href="@{accueil}"><img id="logosola" th:src="@{/img/logoSolalim.png}" alt="logo"></a>
+                    </div>
+                    <div class="col-8">
+                        <p class="d-flex align-items-center" id="pageTitre">APPLICATION SOLALIM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--! CONTAINER APPLI ET COTE -->
+
+        <div class="container">
+            <div class="row justify-content-center flex-nowrap">
+
+                <!--! PAGEGAUCHE DE L'APPLI -->
+
+                <div id="pageGauche" class="col-5 ">
+                    <!--* HISTORIQUE SOLALIM -->
+                    <div class="container mt-5">
+                        <div class="row ">
+                            <div class="col 12 text-end">
+                                <div id="imgSolalim" class="fullscreen ">
+                                    <img th:src="@{/img/SolalimCIVAM.png}" alt="Image en plein écran">
+                                </div>
+                                <!-- Image miniature -->
+                                <img id="thumbnailSolalim" class="thumbnail" th:src="@{/img/thumbSolalimCIVAM.png}" alt="Image miniature" style="cursor: pointer;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container mt-5">
+                        <div class="row ">
+                            <div class="col 12 text-end">
+                                <div id="imgMoodboard" class="fullscreen ">
+                                    <img th:src="@{/img/moodboard.png}" alt="Image en plein écran">
+                                </div>
+                                <!-- Image miniature -->
+                                <img id="thumbnailMoodboard" class="thumbnail" th:src="@{/img/Thumbmoodboard.png}" alt="Image miniature" style="cursor: pointer;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container mt-5">
+                        <div class="row ">
+                            <div class="col 12 text-end">
+                                <div id="imgStyle" class="fullscreen ">
+                                    <img th:src="@{/img/styletile.png}" alt="Image en plein écran">
+                                </div>
+                                <!-- Image miniature -->
+                                <img id="thumbnailStyle" class="thumbnail" th:src="@{/img/thumbStyleTile.png}" alt="Image miniature" style="cursor: pointer;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--! BOITE DE L'APPLI -->
+                <div id="boxApp"  class="col-2">
+
+                    <!--! ROW HEADER APPLI-->
+
+                    <div class="container">
+                        <div id="menu" class="row align-items-center">
+
+                            <!--! HEADER APPLI -->
+
+                            <!--* LOGO -->
+                            <div class="col-8 mt-4 ">
+                                <div class="d-flex justify-content-center align-items-center">
+
+                                        <img id = "logo"  th:src="@{/img/logoSolalim.png}"  alt="logo">
+                                </div>
+                            </div>
+
+                            <!--*MENU APPLI  -->
+                            <div class="col-2">
+                                <!-- Menu hamburger -->
+                                <div class="m-4">
+                                    <!-- Image menu hamburger -->
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--! BODY DE L'APPLI -->
+
+                    <!--* LIGNE VIDE -->
+                    <div class="container  ">
+                        <div class="row  " id="LigneVideSsMenu">
+                            <div id="ligneEspace">
+                            </div>
+                        </div>
+                    </div>
+                    <!--*FORMULAIRE DE CONNECTION -->
+                    <div class="container mt-3 text-center">
+                        <div class="mb-5">
+                            <p id="connect" class="titre">Connectez-vous</p>
+                        </div>
+                        <div id="Error" th:if="${param.error}">
+                            <span th:if="${param.error == 'bad_credentials'}">Mauvais identifiant ou mauvais mot de passe</span>
+                            <span th:if="${param.error != 'bad_credentials'}">Mauvais identifiant ou mauvais mot de passe</span>
+                        </div>
+                        
+                        <form th:action="@{/login}" method="post">
+                            <!-- INPUTS DE CONNECTION -->
+                            <div class="mb-3">
+                                <h4 id="identifiant">Adresse Mail</h4>
+                                <input class="form-control" id="user" name="username" 
+                                    placeholder="Votre adresse Mail"
+                                    type="text">
+                            </div>
+
+                            <div class="mb-3">
+                                <h4>Mot de passe</h4>
+                                <div class="input-group">
+                                    <input class="form-control" id="password" name="password"
+                                        placeholder="Votre mot de passe"
+                                        type="password">
+
+                                    <button class="btn btn-outline-secondary" id="togglePassword" type="button">
+                                        <i class="bi bi-eye"></i>
+                                        <svg class="bi bi-eye" fill="currentColor" height="16"
+                                            viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                                            <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- BOUTON PERSO -->
+                            <button class="btn custom-button" id="btonForm"  type="submit" value="Log in">
+                                <img th:src="@{/img/boutons/connecter.png}" alt="Image" class="normal-image" >
+                                <img th:src="@{/img/boutons/connecterHover.png}" alt="Image au survol" class="hover-image">
+                                <img th:src="@{/img/boutons/inscrireActive.png}" alt="Image au clic" class="active-image">
+                            </button>
+
+                            <!-- LIEN VERS RESEAU -->
+                            <div>
+                                <a th:href="@{/reseaux}" id="inscription">Pas encore inscrit?</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!--! PAGE DE DROITE DE L'APPLI -->
+                <div class="col-5 " id="pageDroite">
+                    <div class="container mt-5">
+                        <div id="celluleVide" class="row ">
+                    
+                        </div>
+                    </div>
+                    <div class="container mt-5">
+                        <div class="row ">
+                            <div class="col 12 text-start">
+                                <div id="imgDBUser" class="fullscreen ">
+                                    <img th:src="@{/img/tablesDBUser.png}" alt="Image en plein écran">
+                                </div>
+                                <!-- Image miniature -->
+                                <img id="thumbtablesDBUser" class="thumbnail" th:src="@{/img/thumbtablesDBUser.png}" alt="Image miniature" style="cursor: pointer;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+        </div>
+    
+    </div>
+</div>
+
+<!--! FOOTER DE LA PAGE -->
+<footer class="bg-dark text-light text-center py-3">
+    <div class="container">
+        <p>&copy; 2023 Eric UNTERNAHR. Tous droits réservés.</p>
+        <p><a class="text-light" href="mentions-legales.html">Mentions légales</a></p>
+    </div>
+</footer>
+
+
+<script crossorigin="anonymous"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

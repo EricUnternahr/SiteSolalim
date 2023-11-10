@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>SOLALIM Mon compte</title>
+    <link th:href="@{/img/faviconSolalim.png}" rel="icon" sizes="96x96" type="image/png">
+    <!-- JAVSCRIPT -->
+    <script async th:src="@{/js/monCompte.js}"></script>
+    <script async th:src="@{/js/ScriptCommun.js}"></script>
+    <!-- Font ROBOTO -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <!-- font OSWALD -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <!-- feuille de style CSS -->
+    <link th:href="@{/css/monCompte.css}" rel="stylesheet">
+    <link th:href="@{/css/StyleCommun.css}" rel="stylesheet">
+    <!-- BOOTSTRAP -->
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet">
+    <!-- Librairie AWESONE -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="body-dark">
+<!--!PAGE PRINCIPALE-->
+
+<div class="container " id="page">
+
+    <!--! HEADER PAGE PRINCIPALE -->
+
+    <div class="row " id="rowPage">
+
+        <div class="container ">
+            <div class="row text-end m-2">
+                <div class=" d-flex justify-content-end align-items-center">
+                    <input id="switch" type="checkbox"><label for="switch" id="butSwitch"></label>
+                </div>
+            </div>
+            <div class="container col-12" id="ContainerTitrePage">
+                <div class="row">
+                    <div class="col-4 text-end">
+                        <a th:href="@{accueil}"><img alt="logo" id="logosola"
+                                                    th:src="@{/img/logoSolalim.png}"></a>
+                    </div>
+                    <div class="col-8">
+                        <h1 class="d-flex align-items-center" id="pageTitre">APPLICATION SOLALIM</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--! CONTAINER APPLI ET COTE -->
+
+        <div class="container">
+            <div class="row justify-content-center flex-nowrap">
+
+                <!--! PAGEGAUCHE DE L'APPLI -->
+                <div id="pageGauche" class="col-5 ">
+                    <div class="container mt-5">
+                        <div class="row ">
+                        </div>
+                    </div>
+                </div>
+
+                <!--! BOITE DE L'APPLI -->
+                <div class="col-2" id="boxApp">
+
+                    <!--! ROW HEADER APPLI-->
+
+                    <div class="container">
+                        <div class="row align-items-center" id="menu">
+
+                            <!--! HEADER APPLI -->
+
+                            <!--* LOGO -->
+                            <div class="col-8 ">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <a th:href="@{accueil}">
+                                        <img alt="logo" id="logo" th:src="@{/img/logoSolalim.png}"></a>
+                                </div>
+                            </div>
+
+                            <!--*MENU APPLI  -->
+                            <div class="col-2">
+                                <!-- Menu hamburger -->
+                                <div class="m-4">
+                                    <!-- Image menu hamburger -->
+                                    <a class="btn" data-bs-toggle="modal" href="#modalScrollableCenter" id="hambMenu"
+                                        role="button">
+                                        <img alt="Bouton Image"
+                                            th:src="@{/img/boutons/hamburger_button_menu_icon_155296.png}">
+                                    </a>
+                                    <!-- Scrollable Modal HTML -->
+                                    <div class="modal fade" id="modalScrollableCenter" tabindex="-1">
+                                        <div class="modal-dialog custom-modal-dialog modal-dialog-centered modal-dialog-scrollable ">
+                                            <div class="modal-content custom-modal-content">
+                                                <div class="modal-header">
+                                                    <p id="menuModal">Menu</p>
+                                                </div>
+                                                <div class="modal-body custom-body">
+                                                    <a class="custom-link" th:href="@{monCompte.html}">Mon compte</a>
+                                                    <a class="custom-link" th:href="@{mesCommandes.css}">Commande</a>
+                                                    <a class="custom-link" th:href="@{gererCommandes.html}">Gestion des commandes</a>
+                                                    <a class="custom-link" th:href="@{reseaux.html}">réseaux</a>
+                                                    <br>
+                                                    <br>
+                                                    <br>
+                                                    <br>
+                                                    <br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--! BODY DE L'APPLI -->
+
+                    <!--* LIGNE VIDE -->
+                    <div class="container  ">
+                        <div class="row  " id="LigneVideSsMenu">
+                            <div id="ligneEspace">
+                            </div>
+                        </div>
+                    </div>
+                    <!--*PAGE D ACCUEIL MON COMPTE -->
+                    <div class="container mt-4 ">
+                        <div class="row ">
+                            <div class=col-8>
+                                <p id="MonCompte" class="titre">Mon compte</p>
+                                <h3 th:text="${user != null ? user.prenom : ''}">Prénom par défaut</h3>
+                                <h3 th:text="${user != null ? user.nom : ''}">Nom par défaut</h3>
+                            </div>
+                            <div class="col-4">
+                                <img alt="Image du groupe" id="lesPotsPotes" th:src="@{/img/reseau/logoPots-potes.png}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row ">
+
+                            <div id="userProfile">
+                                
+                                <span>Numéro de téléphone :</span>
+                                <div class="editable-field">
+                                    <input disabled type="text" th:value="${user != null ? user.numeroTelephone : ''}">
+                                </div>
+
+                                <span>E-mail :</span>
+                                <div class="editable-field">
+                                    <input disabled id="inputMail" type="text" th:value="${user != null ? user.adresseMail : ''}">
+                                    <!-- Icônes d'édition et d'enregistrement ici -->
+                                </div>
+
+                                <span>Adresse :</span>
+                                <div class="editable-field">
+                                    <input disabled type="text" th:value="${user != null ? user.adresse : ''}">
+                                    <!-- Icônes d'édition et d'enregistrement ici -->
+                                </div>
+
+                                <span>Code postal :</span>
+                                <div class="editable-field">                                
+                                    <input disabled id="Code" type="text" th:value="${user != null ? user.codePostal : ''}">
+                                </div>
+                                
+                                <span>ville :</span>
+                                <div class="editable-field">                                
+                                    <input disabled id="ville" type="text" th:value="${user != null ? user.ville : ''}">
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6 mt-0 p-0">
+                                <!-- BOUTON PERSO -->
+
+                                <button class="btn custom-button" onclick="redirigerVersMDP()" type="button">
+                                    <img alt="Image" class="normal-image" th:src="@{/img/boutons/motDePasse.png}">
+                                    <img alt="Image au survol" class="hover-image"
+                                        th:src="@{/img/boutons/motDePasseHover.png}">
+                                    <img alt="Image au clic" class="active-image"
+                                        th:src="@{/img/boutons/motDePasseActive.png}">
+                                </button>
+
+                            </div>
+                            <div class="col-6 mt-0 p-0">
+                                <!-- BOUTON PERSO -->
+
+                                <button class="btn custom-button" onclick="redirigerVersDesinscription()" type="button">
+                                    <img alt="Image" class="normal-image" th:src="@{/img/boutons/desinscription.png}">
+                                    <img alt="Image au survol" class="hover-image"
+                                        th:src="@{/img/boutons/desinscriptionHover.png}">
+                                    <img alt="Image au clic" class="active-image"
+                                        th:src="@{/img/boutons/desinscriptionActive.png}">
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--! PAGE DE DROITE DE L'APPLI -->
+                <div class="col-5 " id="pageDroite">
+                    <div class="container mt-5">
+                        <div id="celluleVide" class="row ">
+                    
+                        </div>
+                    </div>
+                    <div class="container mt-5">
+                        <div class="row ">
+                            <div class="col 12 text-start">
+                                <div id="imgPersonnas" class="fullscreen ">
+                                    <img th:src="@{/img/personnas.png}" alt="Image en plein écran">
+                                </div>
+                                <!-- Image miniature -->
+                                <img id="thumbnailPersonnas" class="thumbnail" th:src="@{/img/thumbPersonnas.png}" alt="Image miniature" style="cursor: pointer;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--! FOOTER DE LA PAGE -->
+<footer class="bg-dark text-light text-center py-3">
+    <div class="container">
+        <p>&copy; 2023 Eric UNTERNAHR. Tous droits réservés.</p>
+        <p><a class="text-light" th:href="@{mentions-legales.html}">Mentions légales</a></p>
+    </div>
+</footer>
+
+
+<script crossorigin="anonymous"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>

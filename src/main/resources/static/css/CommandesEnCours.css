@@ -1,0 +1,49 @@
+/*! BOITES RESEAUX */
+#containBoite {
+    overflow-y: scroll;
+    max-height: 600px;
+}
+
+/* *Cache la scrollbar avec Firefox */
+.custom-scrollbar-y {
+    scrollbar-color: #007bff00 #f1f1f100;
+    height: 600px;
+
+}
+
+/* *Cache la scrollbar avec Chrome */
+#containBoite::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+/* *Boites individuelles */
+.ma-boite {
+    background-color: #df5a08;
+    border: 3px solid #f1f0f0;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-top: 10px;
+    color: #f1f0f0;
+
+}
+
+#AresVerts {
+    width: 100%;
+    height: auto;
+}
+
+#RoureImg {
+    width: 100%;
+    height: auto;
+}
+
+#BioespunaImg {
+    width: 100%;
+    height: auto;
+}
+
+.ma-boite img {
+    border-radius: 21px;
+
+}

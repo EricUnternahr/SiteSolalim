@@ -1,0 +1,88 @@
+/*! LIGNE ESPACE ENTRE HAUT DE L'APPLI ET LES INPUTS */
+#LigneVideSsMenu {
+    height: 20px;
+}
+
+/*! BOITES RESEAUX */
+#containBoite {
+    overflow-y: scroll;
+    max-height: 600px;
+}
+
+/* *Cache la scrollbar avec Firefox */
+.custom-scrollbar-y {
+    scrollbar-color: #007bff00 #f1f1f100;
+    height: 600px;
+
+}
+
+/* *Cache la scrollbar avec Chrome */
+#containBoite::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+/* *Boites individuelles */
+.ma-boite {
+    background-color: #df5a08;
+    border: 3px solid #f1f0f0;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-top: 10px;
+    color: #f1f0f0;
+
+}
+
+#lesBiotineuses {
+    width: 100%;
+    height: auto;
+}
+
+#lesPotsPotes {
+    width: 100%;
+    height: auto;
+}
+
+#LocoMinges {
+    width: 100%;
+    height: auto;
+}
+
+.ma-boite img {
+    border-radius: 21px;
+
+}
+/*! IMAGES CACHEES SUR LES COTES */
+#thumbnailMoodboard {
+    visibility: hidden;
+    transition: transform 0.5s ease-in-out;
+}
+#thumbnailReseaux {
+    visibility: hidden;
+    transition: transform 0.5s ease-in-out;
+}
+.thumbnail:hover {
+
+    transform:  scale(1.1);
+}
+.thumbnail:hover:after {
+
+    transform:  scale(1);
+}
+
+.fullscreen {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.fullscreen img {
+    max-width: 100%;
+    max-height: 100%;
+}

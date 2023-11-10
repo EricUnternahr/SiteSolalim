@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>SOLALIM Ma Commande</title>
+    <link th:src="@{/img/faviconSolalim.png}" rel="icon" sizes="96x96" type="image/png">
+    <!-- Font ROBOTO -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <!-- font OSWALD -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <!-- feuille de style CSS -->
+    <link th:href="@{/css/Commandes.css}" rel="stylesheet"> rel="stylesheet">
+    <link th:href="@{/css/StyleCommun.css}" rel="stylesheet"> rel="stylesheet">
+    <!-- BOOTSTRAP -->
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet">
+    <!-- Librairie AWESONE -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+    <!-- JAVSCRIPT -->
+    <script async th:src="@{/js/Commandes.js}"></script>
+    <script async th:src="@{/js/ScriptCommun.js}"></script>
+</head>
+<body class="body-dark">
+<!--!PAGE PRINCIPALE-->
+
+<div class="container " id="page">
+
+    <!--! HEADER PAGE PRINCIPALE -->
+
+    <div class="row " id="rowPage">
+
+        <div class="container ">
+            <div class="row text-end m-2">
+                <div class=" d-flex justify-content-end align-items-center">
+                    <input id="switch" type="checkbox"><label for="switch" id="butSwitch"></label>
+                </div>
+            </div>
+            <div class="container col-12" id="ContainerTitrePage">
+                <div class="row">
+                    <div class="col-4 text-end">
+                        <a th:href="@{accueil}"><img alt="logo" id="logosola"
+                                                    th:src="@{/img/logoSolalim.png}"></a>
+                    </div>
+                    <div class="col-8">
+                        <h1 class="d-flex align-items-center" id="pageTitre">APPLICATION SOLALIM</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--! CONTAINER APPLI ET COTE -->
+
+        <div class="container">
+            <div class="row justify-content-center flex-nowrap">
+
+                <!--! PAGEGAUCHE DE L'APPLI -->
+
+
+                <!--! BOITE DE L'APPLI -->
+                <div class="col-2" id="boxApp">
+
+                    <!--! ROW HEADER APPLI-->
+
+                    <div class="container">
+                        <div class="row align-items-center" id="menu">
+
+                            <!--! HEADER APPLI -->
+
+                            <!--* LOGO -->
+                            <div class="col-8 ">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <a th:href="@{accueil}">
+                                        <img alt="logo" id="logo" th:src="@{/img/logoSolalim.png}"></a>
+                                </div>
+                            </div>
+
+                            <!--*MENU APPLI  -->
+                            <div class="col-2">
+                                <!-- Menu hamburger -->
+                                <div class="m-4">
+                                    <!-- Image menu hamburger -->
+                                    <a class="btn" data-bs-toggle="modal" href="#modalScrollableCenter" id="hambMenu"
+                                        role="button">
+                                        <img alt="Bouton Image"
+                                        th:src="@{/img/boutons/hamburger_button_menu_icon_155296.png}">
+                                    </a>
+                                    <!-- Scrollable Modal HTML -->
+                                    <div class="modal fade" id="modalScrollableCenter" tabindex="-1">
+                                        <div class="modal-dialog custom-modal-dialog modal-dialog-centered modal-dialog-scrollable ">
+                                            <div class="modal-content custom-modal-content">
+                                                <div class="modal-header">
+                                                    <p id="menuModal">Menu</p>
+                                                </div>
+                                                <div class="modal-body custom-body">
+                                                    <a class="custom-link" th:href="@{monCompte.html}">Mon compte</a>
+                                                    <a class="custom-link" th:href="@{mesCommandes.css}">Commande</a>
+                                                    <a class="custom-link" th:href="@{gererCommandes.html}">Gestion des commandes</a>
+                                                    <a class="custom-link" th:href="@{reseaux.html}">réseaux</a>
+                                                    <br>
+                                                    <br>
+                                                    <br>
+                                                    <br>
+                                                    <br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--! BODY DE L'APPLI -->
+
+                    <!--* LIGNE VIDE -->
+                    <div class="container  ">
+                        <div class="row  " id="LigneVideSsMenu">
+                            <div id="ligneEspace">
+                            </div>
+                        </div>
+                    </div>
+                    <!--*COMMANDE-->
+                    <div class="container">
+                        <div class="row ">
+                            <div class=col-8>
+                                <p class="titre">Commande</p>
+                                <h2>Les Ares Verts</h2>
+                                <p class="description">Date butoire le 12/02/2024</p>
+                            </div>
+                            <div class="col-4">
+                                <img alt="Image du groupe" id="lesPotsPotes" th:src="@{/img/reseau/logoPots-potes.png}">
+                            </div>
+                        </div>
+                    </div>
+                    <!--Boites produits-->
+                    <div class="container">
+                        <div id="containBoite">
+                            <div class="row">
+                            
+                                <div class="col-6 ps-4">
+                                    <div id="Pixie">
+                                        <div class="ma-boite text-center">
+                                            <div>
+                                                <img alt="image d'une pomme PIXIE" id="PixieImg"
+                                                th:src="@{/img/commandes/pixie.png}">
+                                            </div>
+                                            <div class="mt-2">
+                                                <p class="description">Cagette de 7Kg</p>
+                                                <p class="description">31€</p>
+                                                <div class="mt-2">
+                                                    <label class="description" for="quantite">Quantité :</label>
+                                                    <select class="change" id="quantite"
+                                                            onchange="calculerTotal({quantite:'quantite',total :'total1',prix : 31})">
+                                                        <!-- Options de 0 à 10 -->
+                                                        <option value="0">0</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                    </select>
+                                                    <span class="total" id="total1"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-6">
+                                    <div id="Opal">
+                                        <div class="ma-boite text-center">
+                                            <div class="mb-1">
+                                                <img alt="Image d'une pomme OPAL" id="OpalImg"
+                                                th:src="@{/img/commandes/opal.png}">
+                                            </div>
+                                            <div class="mt-2">
+                                                <p class="description">Cagette de 7Kg</p>
+                                                <p class="description">31€</p>
+                                                <div class="mt-2">
+                                                    <label class="description" for="quantite">Quantité :</label>
+                                                    <select id="quantite2"
+                                                            onchange="calculerTotal({quantite:'quantite2',total :'total2',prix : 31})">
+                                                        <!-- Options de 0 à 10 -->
+                                                        <option value="0">0</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                    </select>
+                                                    <span class="total" id="total2"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6 ps-4">
+                                    <div id="Compote">
+                                        <div class="ma-boite text-center">
+                                            <div class="mb-1">
+                                                <img alt="pot de compote" id="CompoteImg"
+                                                th:src="@{/img/commandes/compote.png}">
+                                            </div>
+                                            <div class="mt-2">
+                                                <p class="description">Pot de 710g par 12</p>
+                                                <p class="description">39.6€</p>
+                                                <div class="mt-2">
+                                                    <label class="description" for="quantite">Quantité :</label>
+                                                    <select id="quantite3"
+                                                            onchange="calculerTotal({quantite:'quantite3',total :'total3',prix :39.6})">
+                                                        <!-- Options de 0 à 10 -->
+                                                        <option value="0">0</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                    </select>
+                                                    <span class="total" id="total3"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-6 ">
+                                    <div class="mx-auto" id="Petillant">
+                                        <div class="ma-boite text-center">
+                                            <div class="mb-1">
+                                                <img alt="pot de compote" id="PetillantImg"
+                                                th:src="@{/img/commandes/petillant.png}">
+                                            </div>
+                                            <div class="mt-2">
+                                                <p class="description">Carton de 6 bouteilles</p>
+                                                <p class="description">22€</p>
+                                                <div class="mt-2">
+                                                    <label class="description" for="quantite">Quantité :</label>
+                                                    <select id="quantite4"
+                                                            onchange="calculerTotal({quantite:'quantite4',total :'total4',prix :22})">
+                                                        <!-- Options de 0 à 10 -->
+                                                        <option value="0">0</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                    </select>
+                                                    <span class="total" id="total4"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-6 mt-2 p-0">
+                                <!-- BOUTON PERSO -->
+                                <button class="btn custom-button" onclick="redirigerVersLesCommandes()" type="button">
+                                    <img alt="Image" class="normal-image" th:src="@{/img/boutons/valider.png}">
+                                    <img alt="Image au survol" class="hover-image"
+                                    th:src="@{/img/boutons/validerHover.png}">
+                                    <img alt="Image au clic" class="active-image"
+                                    th:src="@{/img/boutons/validerActive.png}">
+                                </button>
+                            </div>
+                            <div class="col-6 ms-3 mt-2 p-2" id="TotalDeLaCom">
+                                <P>TOTAL :</P>
+                                <p id="TotalCommande"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--! PAGE DE DROITE DE L'APPLI -->
+            <div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--! FOOTER DE LA PAGE -->
+<footer class="bg-dark text-light text-center py-3">
+    <div class="container">
+        <p>&copy; 2023 Eric UNTERNAHR. Tous droits réservés.</p>
+        <p><a class="text-light" th:href="@{mentions-legales.html}">Mentions légales</a></p>
+    </div>
+</footer>
+
+
+<script crossorigin="anonymous"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>

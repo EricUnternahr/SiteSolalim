@@ -1,0 +1,74 @@
+/*!LIGNE ENTRE TITRE ET BOITES*/
+
+#ligneVide {
+    height: 20px;
+}
+
+/*!BOITES MENU*/
+
+.commandePassee,
+.commandePassee2 {
+    border: 3px solid #f1f0f0;
+    border-radius: 25px;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+    margin-top: 10px;
+    color: #f1f0f0;
+    height: auto;
+    width: auto;
+    padding-top: 10px;
+}
+
+#containBoite {
+    overflow-y: scroll;
+    max-height: 450px;
+}
+
+/* *Cache la scrollbar avec Firefox */
+.custom-scrollbar-y {
+    scrollbar-color: #007bff00 #f1f1f100;
+    height: 600px;
+
+}
+
+/* *Cache la scrollbar avec Chrome */
+#containBoite::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+.commandePassee {
+    background-color: #aaaaaa;
+}
+
+.commandePassee2 {
+    background-color: #797777;
+}
+
+
+.commandePassee:hover, .commandePassee2:hover {
+    transform: scale(1.05);
+}
+
+.commandePassee:hover:after,
+.commandePassee2:hover:after {
+    transform: scale(1);
+}
+
+.description {
+    color: #000909;
+    font-size: 16px;
+    line-height: 5px;
+    font-weight: 600;
+
+}
+
+.menu {
+    font-size: 22px;
+    line-height: 25px;
+    font-weight: bolder;
+
+}
+
+#monCompte {
+    transition: transform 0.5s ease-in-out;
+}
