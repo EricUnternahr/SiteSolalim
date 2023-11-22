@@ -28,25 +28,32 @@ toggleRepeatPassword.addEventListener('click', () => {
 //!MESSAGE D'ENREGISTREMENT ET REDIRECTION
 document.addEventListener("DOMContentLoaded", function () {
     if (new URLSearchParams(window.location.search).get("success") === "true") {
-        
-        replaceDiv(oldDiv, newDiv)
+        const oldDiv = document.querySelector('#containBoite');
+        replaceDiv(oldDiv);
 
-        
         setTimeout(function () {
             window.location.href = "/monCompte";
         }, 2000);
     }
 });
 
+
 //!Remplacement des div:
-function replaceDiv(oldDiv, newDiv) {
+function replaceDiv(oldDiv, newDivContent) {
+    // Création du nouveau div
+    const newDiv = document.createElement('div');
+    newDiv.className = "col-12 mx-auto text-center";
+    newDiv.id = "remerciement";
+
+    // Ajout de contenu textuel au nouveau div
+    const p = document.createElement('p');
+    p.textContent = "Le mot de passe est enregistré.";
+    newDiv.appendChild(p);
+
+    // Remplacement de l'ancien div par le nouveau
     oldDiv.replaceWith(newDiv);
 }
-const oldDiv = document.querySelector('#containBoite');
-const newDiv = document.createElement('div');
-        newDiv.innerHTML = `<div class="col-12 mx-auto" id="remerciement" text-center>
-                            <p>Le mot de passe est enregistré.</p>                            
-                            </div>`;
+
 
 //! AFFICHE L'IMAGE QUAND L ELEMENT EST CLICK
 function toggleThumbnailOnClick(triggerElement, thumbnailElement) {

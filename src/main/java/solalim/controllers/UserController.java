@@ -65,36 +65,42 @@ public class UserController {
         model.addAttribute("user", user);
         return "motDePasse";
     }
+
     @GetMapping("/LesCommandes")
     public String LesCommandes(Model model) {
         DBUser user = getCurrentUser();
         model.addAttribute("user", user);
         return "LesCommandes";
     }
+
     @GetMapping("/Commandes")
     public String Commandes(Model model) {
         DBUser user = getCurrentUser();
         model.addAttribute("user", user);
         return "Commandes";
     }
+
     @GetMapping("/CommandesEnCours")
     public String CommandesEnCours(Model model) {
         DBUser user = getCurrentUser();
         model.addAttribute("user", user);
         return "CommandesEnCours";
     }
+
     @GetMapping("/CommandesPassees")
     public String CommandesPassees(Model model) {
         DBUser user = getCurrentUser();
         model.addAttribute("user", user);
         return "CommandesPassees";
     }
+
     @GetMapping("/mesCommandesEnCours")
     public String mesCommandesEnCours(Model model) {
         DBUser user = getCurrentUser();
         model.addAttribute("user", user);
         return "mesCommandesEnCours";
     }
+
     @GetMapping("/desinscription")
     public String desinscription(Model model) {
         DBUser user = getCurrentUser();
@@ -132,12 +138,20 @@ public class UserController {
 
         return "redirect:/inscription?success=true";
     }
+
     @PostMapping("/motDePasse")
     public String changePassword(@RequestParam("currentPassword") String currentPassword,
                                  @RequestParam("newPassword") String newPassword,
                                  @RequestParam("confirmPassword") String confirmPassword,
                                  Model model) {
         DBUser user = getCurrentUser();
+
+        if ((currentPassword == null || currentPassword.isEmpty()) ||
+                (newPassword == null || newPassword.isEmpty()) ||
+                (confirmPassword == null || confirmPassword.isEmpty())) {
+            model.addAttribute("errorEmptyField", true);
+            return "motDePasse";
+        }
 
         if (!passwordEncoder.matches(currentPassword, user.getPassword())) {
             model.addAttribute("errorCurrentPassword", true);
@@ -160,9 +174,6 @@ public class UserController {
 
         return "redirect:/motDePasse?success=true";
     }
-
-
-
 
     @PostMapping("/desinscription")
     public String unsubscribeUser(@RequestParam("password") String password, Model model, RedirectAttributes redirectAttributes) {
@@ -188,18 +199,9 @@ public class UserController {
             email = ((UserDetails) authentication.getPrincipal()).getUsername();
         }
 
-
-
-
-
-
-
-
-
         System.out.println("Email used to find user: " + email);
 
         DBUser user = userRepository.findByAdresseMail(email);
-
 
         if (user != null) {
             System.out.println("User found: " + user.getPrenom());
@@ -209,6 +211,5 @@ public class UserController {
 
         return user;
     }
-
 
 }

@@ -1,3 +1,83 @@
-.techno {
-    width:  250px;
+/* Styles communs pour .boite-front et .boite-back */
+.boite-front, .boite-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    backface-visibility: hidden;
+    border-radius: 50%;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    }
+
+/* Styles spécifiques pour .boite-front */
+.boite-front {
+    font-size: 40px;
+}
+
+/* Styles spécifiques pour .boite-back */
+.boite-back {
+    transform: rotateY(180deg);
+}
+
+/* Styles pour .boiteBox */
+.boiteBox {
+    border-width: 0;
+    perspective: 800px;
+    margin: 15px;
+
+}
+
+/* Styles pour .boite */
+.boite {
+    position: relative;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    transform-style: preserve-3d;
+    transition: .5s ease;
+    box-shadow: 0 30px 30px rgba(9, 8, 8, 0.5);
+    
+}
+
+/* Styles pour .boiteBox:hover */
+.boiteBox:hover .boite {
+    transform: rotateY(180deg);
+}
+
+/* Styles pour les images */
+img {
+    height: 150px;
+    
+
+}
+
+/* Styles pour les identifiants spécifiques */
+#html {
+    background-color: #e44d25;
+}
+
+#css {
+    background-color: #369ad6;
+}
+
+#js {
+    background-color: #f0dc4e;
+}
+
+#java, #sql {
+    background-color: #f9f9f6;
+}
+
+/* Style commun pour plusieurs identifiants */
+#java, #sql, #html, #css, #js {
+    font-size: 18px;
+}
+
+.lienGIT{
+    height: 250px;
+    width: auto;
 }

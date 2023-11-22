@@ -48,7 +48,7 @@
                         <a th:href="@{accueil}"><img id="logosola" th:src="@{/img/logoSolalim.png}" alt="logo"></a>
                     </div>
                     <div class="col-8">
-                        <h1 class="d-flex align-items-center" id="pageTitre">APPLICATION SOLALIM</h1>
+                        <h1 class="d-flex align-items-center pageTitre" >APPLICATION SOLALIM</h1>
                     </div>
                 </div>
             </div>
@@ -96,10 +96,10 @@
                                                     <p id="menuModal">Menu</p>
                                                 </div>
                                                 <div class="modal-body custom-body">
-                                                    <a class="custom-link" th:href="@{monCompte.html}">Mon compte</a>
-                                                    <a class="custom-link" th:href="@{mesCommandes.css}">Commande</a>
-                                                    <a class="custom-link" th:href="@{gererCommandes.html}">Gestion des commandes</a>
-                                                    <a class="custom-link" th:href="@{reseaux.html}">réseaux</a>
+                                                    <a class="custom-link" th:href="@{accueil}">Accueil</a>
+                                                    <a class="custom-link" th:href="@{monCompte}">Mon compte</a>
+                                                    <a class="custom-link" th:href="@{LesCommandes}">Commande</a>
+                                                    <a class="custom-link" th:href="@{reseaux}">réseaux</a>
                                                     <br>
                                                     <br>
                                                     <br>
@@ -146,7 +146,7 @@
                         <div class="row">
                             <div class="col-10 mx-auto" id="BoitesRoure">
                                 <div class="ma-boite text-center">
-                                    <img alt="img Riz Marseillette" id="RoureImg" th:src="@{/img/commandes/RoureRiz.png}">
+                                    <img alt="img Riz Roure" id="RoureImg" th:src="@{/img/commandes/RoureRiz.png}">
                                     <h4>Riz du Roure</h4>
                                     <p class="description"> Commande de riz BIO de Roure</p>
                                     <p class="description">Possibilité de commander par 500g au minimum.</p>
@@ -179,7 +179,7 @@
 <footer class="bg-dark text-light text-center py-3">
     <div class="container">
         <p>&copy; 2023 Eric UNTERNAHR. Tous droits réservés.</p>
-        <p><a th:href="@{mentions-legales.html}" class="text-light">Mentions légales</a></p>
+        <p><a th:href="@{mentions-legales}" class="text-light">Mentions légales</a></p>
     </div>
 </footer>
 

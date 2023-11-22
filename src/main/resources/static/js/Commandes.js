@@ -1,18 +1,22 @@
 
 //!REMPLACEMENT DES DIV:
-function replaceDiv(oldDiv, newDiv) {
+function replaceDiv(oldDiv) {
+    const newDiv = document.createElement('div');
+    newDiv.className = "col-12 mx-auto text-center";
+    newDiv.id = "remerciement";
+
+    const p = document.createElement('p');
+    p.textContent = "La commande est prise en compte";
+    newDiv.appendChild(p);
+
     oldDiv.replaceWith(newDiv);
 }
-const oldDiv = document.querySelector('#containBoite');
-const newDiv = document.createElement('div');
-    newDiv.innerHTML = `<div class="col-12 mx-auto" id="remerciement" text-center>
-                            <p>La commande est prise en compte</p>
-                            
-                        </div>`;
 
 //! CLIC DU BOUTON DECONNECTION ET DES BOITES
 function redirigerVersLesCommandes() {
-    replaceDiv(oldDiv, newDiv)
+    const oldDiv = document.querySelector('#containBoite');
+    replaceDiv(oldDiv);
+
     setTimeout(function () {
         window.location.href = "LesCommandes";
     }, 2000);

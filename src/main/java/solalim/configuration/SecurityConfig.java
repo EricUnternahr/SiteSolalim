@@ -51,6 +51,7 @@ public class SecurityConfig {
                         .requestMatchers("/reseaux").permitAll()
                         .requestMatchers("/user-form").permitAll()
                         .requestMatchers("/inscription").permitAll()
+                        .requestMatchers("/mentions-legales").permitAll()
                         .anyRequest().authenticated()
                 );
 
@@ -73,6 +74,7 @@ public class SecurityConfig {
         AuthenticationManagerBuilder authenticationManagerBuilder = http.getSharedObject(AuthenticationManagerBuilder.class);
         authenticationManagerBuilder.userDetailsService(customUserDetailsService).passwordEncoder(bCryptPasswordEncoder);
         return authenticationManagerBuilder.build();
+
     }
 
     @Bean

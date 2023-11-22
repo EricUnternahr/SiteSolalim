@@ -1,26 +1,65 @@
 // ! BOITES RESEAUX
 
-function createNewDiv(idImage, imageSrc, title, description,clic) {
+function createNewDiv(idImage, imageSrc, title, description, clic) {
     const newDiv = document.createElement('div');
-    newDiv.innerHTML = `<div class="col-12 mx-auto">
-                        <div class="ma-boite text-center">
-                            <img ${idImage} src="${imageSrc}" alt="Image">
-                            <h2>${title}</h2>
-                            <div class=" m-1">
-                            <p class="description" style="font-size: 18px;">${description}</p>
-                            </div>
-                            <a href="#">
-                                <button id="btonForm" onclick="${clic}" type="submit" class="btn custom-button">
-                                    <img src="/img/boutons/inscrire.png" alt="Image" class="normal-image">
-                                    <img src="/img/boutons/inscrireHover.png" alt="Image au survol" class="hover-image">
-                                    <img src="/img/boutons/inscrireActive.png" alt="Image au clic" class="active-image">
-                                </button>
-                            </a>
-                        </div>
-                    </div>`;
+    newDiv.className = "col-12 mx-auto";
+
+    const maBoite = document.createElement('div');
+    maBoite.className = "ma-boite text-center";
+    newDiv.appendChild(maBoite);
+
+    const img = document.createElement('img');
+    img.id = idImage;
+    img.src = imageSrc;
+    img.alt = "Image";
+    maBoite.appendChild(img);
+
+    const h2 = document.createElement('h2');
+    h2.textContent = title;
+    maBoite.appendChild(h2);
+
+    const descriptionDiv = document.createElement('div');
+    descriptionDiv.className = "m-1";
+    maBoite.appendChild(descriptionDiv);
+
+    const p = document.createElement('p');
+    p.className = "description";
+    p.style.fontSize = "18px";
+    p.textContent = description;
+    descriptionDiv.appendChild(p);
+
+    const a = document.createElement('a');
+    a.href = "#";
+    maBoite.appendChild(a);
+
+    const button = document.createElement('button');
+    button.id = "btonForm";
+    button.type = "submit";
+    button.className = "btn custom-button";
+    button.addEventListener('click', window[clic]);
+    a.appendChild(button);
+
+    const imgNormal = document.createElement('img');
+    imgNormal.src = "/img/boutons/inscrire.png";
+    imgNormal.alt = "Image";
+    imgNormal.className = "normal-image";
+    button.appendChild(imgNormal);
+
+    const imgHover = document.createElement('img');
+    imgHover.src = "/img/boutons/inscrireHover.png";
+    imgHover.alt = "Image au survol";
+    imgHover.className = "hover-image";
+    button.appendChild(imgHover);
+
+    const imgActive = document.createElement('img');
+    imgActive.src = "/img/boutons/inscrireActive.png";
+    imgActive.alt = "Image au clic";
+    imgActive.className = "active-image";
+    button.appendChild(imgActive);
 
     return newDiv;
 }
+
 
 function replaceDiv(oldDiv, newDiv) {
     oldDiv.replaceWith(newDiv);
@@ -34,7 +73,7 @@ function returnToInitialState(newDiv, originalDiv) {
 const oldDiv1 = document.querySelector('#Boite1');
 // New Div Les Biotineuses
 const newDivBiotineuses = createNewDiv(
-    'id="lesBiotineuses"',
+    'lesBiotineuses',
     '/img/reseau/les_biotineuses.png',
     'Les Biotineuses',
     'Adhérents du groupement d\'achat de Lagrasse et villages des alentours. Lieux et dates de distribution à Pradelles en Val, Lagrasse, Serviès (relatifs aux commandes.)',
@@ -45,7 +84,7 @@ const newDivBiotineuses = createNewDiv(
 const oldDiv2 = document.querySelector('#BoitePotsPotes');
 // New Div Les Pots-Potes
 const newDivPotsPotes = createNewDiv(
-    'id="lesPotsPotes"',
+    'lesPotsPotes',
     '/img/reseau/favicon.png',
     'Les POT-POTES',
     'Capendu, Douzens, Barbaira, Marseillette Les pots potes de l Alaric vous proposent une alternative à la grande distribution : écologique, économique, éthique et conviviale !',
@@ -56,7 +95,7 @@ const newDivPotsPotes = createNewDiv(
 const oldDiv3 = document.querySelector('#BoitesLoco');
 // New Div Les Pots-Potes
 const newDivLoco = createNewDiv(
-    'id="LocoMinges"',
+    'LocoMinges',
     '/img/reseau/locominges.png',
     'LOCO MINGES',
     'Saint-Gaudens, 31 Le Loco Minges est une épicerie coopérative où trouver des produits locaux de saison, sélectionnés par et pour les Loco Mangeurs.',

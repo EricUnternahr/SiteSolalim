@@ -2,13 +2,11 @@
 //!MESSAGE D'ENREGISTREMENT ET REDIRECTION
 document.addEventListener("DOMContentLoaded", function () {
     let successMessage = document.getElementById("success-message");
+    const oldDiv = document.querySelector('#containBoite');
 
-    
     if (successMessage && new URLSearchParams(window.location.search).get("success") === "true") {
-        
-        replaceDiv(oldDiv, newDiv)
+        replaceDiv(oldDiv);
 
-        
         setTimeout(function () {
             successMessage.style.display = "none";
             window.location.href = "/login";
@@ -17,15 +15,21 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //!Remplacement des div:
-function replaceDiv(oldDiv, newDiv) {
+function replaceDiv(oldDiv) {
+    const newDiv = document.createElement('div');
+    newDiv.className = "col-12 mx-auto text-center";
+    newDiv.id = "remerciement";
+
+    const p1 = document.createElement('p');
+    p1.textContent = "Merci de votre inscription.";
+    newDiv.appendChild(p1);
+
+    const p2 = document.createElement('p');
+    p2.textContent = "Veuillez vous connecter";
+    newDiv.appendChild(p2);
+
     oldDiv.replaceWith(newDiv);
 }
-const oldDiv = document.querySelector('#containBoite');
-const newDiv = document.createElement('div');
-    newDiv.innerHTML = `<div class="col-12 mx-auto" id="remerciement" text-center>
-                            <p>Merci de votre inscription.</p>
-                            <p>Veuillez vous connecter</p>
-                        </div>`;
 
 //!VALIDATION DES CARACTERES ET FORMES
 function validateForm() {

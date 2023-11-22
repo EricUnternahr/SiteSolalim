@@ -10,6 +10,10 @@ class LoginController {
     String login() {
         return "connexion";
     }
+    @GetMapping("/mentions-legales")
+    String mentions() {
+        return "mentions-legales";
+    }
 
 }
 

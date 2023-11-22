@@ -10,32 +10,26 @@ togglePassword.addEventListener('click', () => {
 
 //!MESSAGE D'ENREGISTREMENT ET REDIRECTION
 document.addEventListener("DOMContentLoaded", function () {
+    const successParam = new URLSearchParams(window.location.search).get("success");
+    let targetDiv;
+    let redirectUrl;
 
-    
-    if(new URLSearchParams(window.location.search).get("success") === "false") {
-        
-        replaceDiv(oldDiv, newDivEmpty)
+    if (successParam === "false") {
+        targetDiv = newDivEmpty;
+        redirectUrl = "/desinscription";
+    } else if (successParam === "Error") {
+        targetDiv = newDivError;
+        redirectUrl = "/desinscription";
+    } else if (successParam === "true") {
+        targetDiv = newDiv;
+        redirectUrl = "/login";
+    }
 
-        
+    if (targetDiv) {
+        replaceDiv(oldDiv, targetDiv);
         setTimeout(function () {
-            window.location.href = "/desinscription";
-        }, 2000);
-    }else if(new URLSearchParams(window.location.search).get("success") === "Error") {
-        
-        replaceDiv(oldDiv, newDivError)
-
-        
-        setTimeout(function () {
-            window.location.href = "/desinscription";
-        }, 2000);
-    }else if (new URLSearchParams(window.location.search).get("success") === "true") {
-        
-        replaceDiv(oldDiv, newDiv)
-
-        
-        setTimeout(function () {
-            window.location.href = "/login";
-        }, 3000);
+            window.location.href = redirectUrl;
+        }, successParam === "true" ? 3000 : 2000);
     }
 });
 
@@ -43,33 +37,36 @@ document.addEventListener("DOMContentLoaded", function () {
 function replaceDiv(oldDiv, newDiv) {
     oldDiv.replaceWith(newDiv);
 }
+
+//!Création des Div Spécifiques
 const oldDiv = document.getElementById("oldDiv");
-const newDiv = document.createElement('div');
-newDiv.id = "newDiv";
-newDiv.className = " text-center mx-auto"
 
-newDiv.innerHTML = `<div class="col-12 mx-auto" id="remerciement" text-center>
-                    <div class=" mb-1"><img src="/img/triangle.png" alt="Triangle d'avertissement"></div>
-                    <h5>Vous etes bien desincris</h5>                            
-                    </div>`;
+const newDiv = createDivWithContent("/img/triangle.png", "Vous êtes bien désinscrit");
+const newDivEmpty = createDivWithContent("/img/triangle.png", "Il faut le mot de passe");
+const newDivError = createDivWithContent("/img/triangle.png", "Le mot de passe ne correspond pas");
 
-const newDivEmpty = document.createElement('div');
-newDivEmpty.id = "newDiv";
-newDivEmpty.className = " text-center mx-auto"
+//!Fonction de Création de Div
+function createDivWithContent(imgSrc, message) {
+    const newDiv = document.createElement('div');
+    newDiv.className = "col-12 mx-auto text-center mx-auto";
 
-newDivEmpty.innerHTML = `<div class="col-12 mx-auto" id="remerciement" text-center>
-                        <div class=" mb-1"><img src="/img/triangle.png" alt="Triangle d'avertissement"></div>
-                        <h5>Il faut le mot de passe</h5>                            
-                        </div>`;
+    const imgDiv = document.createElement('div');
+    imgDiv.className = "mb-1";
+    newDiv.appendChild(imgDiv);
 
-const newDivError = document.createElement('div');
-newDivError.id = "newDiv";
-newDivError.className = " text-center mx-auto"
+    const img = document.createElement('img');
+    img.src = imgSrc;
+    img.alt = "Triangle d'avertissement";
+    imgDiv.appendChild(img);
 
-newDivError.innerHTML = `<div class="col-12 mx-auto" id="remerciement" text-center>
-                    <div class=" mb-1"><img src="/img/triangle.png" alt="Triangle d'avertissement"></div>
-                    <h5>Le mot de passe ne correspond pas</h5>                            
-                    </div>`;
+    const h5 = document.createElement('h5');
+    h5.textContent = message;
+    newDiv.appendChild(h5);
+
+    return newDiv;
+}
+
+
 
 //! AFFICHE L'IMAGE QUAND L ELEMENT EST CLICK
 function toggleThumbnailOnClick(triggerElement, thumbnailElement) {

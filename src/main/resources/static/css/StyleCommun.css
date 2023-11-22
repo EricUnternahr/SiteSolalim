@@ -1,4 +1,6 @@
 /*!GESTION DE LA PAGE*/
+
+
 body {
     font-family: 'Roboto', sans-serif;
     min-height: 100vh; 
@@ -25,7 +27,7 @@ body {
     height: 100px;
 }
 
-#pageTitre { 
+.pageTitre { 
     font-size: 3em;
     color: beige;
     height: 100px;
@@ -149,6 +151,10 @@ footer {
 
 
 /*! BOUTONS PERSO EN HOVER ACTIVE NORMAL */
+.btn {
+    border-width: 0 !important;
+}
+
 .custom-button .hover-image,
 .custom-button .active-image {
     display: none;
@@ -156,6 +162,7 @@ footer {
 
 .custom-button:hover .normal-image {
     display: none;
+    
 }
 
 .custom-button:hover .hover-image {
@@ -168,6 +175,7 @@ footer {
 
 .custom-button:active .active-image {
     display: block;
+    border-width: 0 !important;
 }
 
 #inscription {

@@ -3,9 +3,127 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLALIM accueil</title>
+    <link rel="icon" type="image/png" sizes="96x96" th:src="@{/img/faviconSolalim.png}">
+    <!-- Font ROBOTO -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <!-- font OSWALD -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <!-- feuille de style CSS -->
+    <link rel="stylesheet" th:href="@{/css/mentions-legales.css}">
+    <link rel="stylesheet" th:href="@{/css/StyleCommun.css}">
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Librairie AWESONE -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <!-- JAVSCRIPT -->
+    <script async  th:src="@{/js/ScriptCommun.js}"></script>
 </head>
-<body>
+
+<body class="body-dark">
+<!--!PAGE PRINCIPALE-->
+
+<div id="page" class = "container ">
+
+    <!--! HEADER PAGE PRINCIPALE -->
+
+    <div id="rowPage" class="row">
+
+        <div class="container ">
+            <div class="row text-end m-2">
+                <div class=" d-flex justify-content-end align-items-center">
+                    <input type="checkbox" id="switch" ><label id="butSwitch" for="switch"></label>
+                </div>
+            </div>
+            <div id="ContainerTitrePage" class="container col-12">
+                <div class="row">
+                    <div class="col-4 text-end">
+                        <a th:href="@{accueil}"><img id="logosola" th:src="@{/img/logoSolalim.png}" alt="logo"></a>
+                    </div>
+                    <div class="col-8">
+                        <h1 class="d-flex align-items-center pageTitre" >APPLICATION SOLALIM</h1>
+                    </div>
+                </div>
+                <div class="row m-5">
+                    <div>
+                        <h1 class="col-12 pageTitre text-center">Technologies Utilisées</h1>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    
+                    <div class="boiteBox col-2">
+                        <div class="boite">
+                            <div class="boite-front"> <img alt="HTML" class="techno" th:src="@{/img/html.png}">
+                            </div>
+                            <div id="html" class="boite-back text-center">HTML avec BOOTSTRAP</div>
+                        </div>
+                    </div>
+                    <div class="boiteBox col-2">
+                        <div class="boite">
+                            <div class="boite-front"> <img alt="HTML" class="techno" th:src="@{/img/css.png}">
+                            </div>
+                            <div id="css" class="boite-back text-center">CSS</div>
+                        </div>
+                    </div>
+                    <div class="boiteBox col-2">
+                        <div class="boite">
+                            <div class="boite-front"> <img alt="HTML" class="techno" th:src="@{/img/js.png}">
+                            </div>
+                            <div id="js" class="boite-back text-center">JavaScript</div>
+                        </div>
+                    </div>
+                    <div class="boiteBox col-2">
+                        <div class="boite">
+                            <div class="boite-front"> <img alt="HTML" class="techno" th:src="@{/img/java.png}">
+                            </div>
+                            <div id="java" class="boite-back text-center">Java avec Gradle et Spring</div>
+                        </div>
+                    </div>
+                    <div class="boiteBox col-2">
+                        <div class="boite">
+                            <div class="boite-front"> <img alt="HTML" class="techno" th:src="@{/img/sqlimg.png}">
+                            </div>
+                            <div id="sql" class="boite-back text-center">SQL</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-5">
+                    <div>
+                        <h1 class="col-12 pageTitre text-center">Lien GIT</h1>
+
+                        <div class="text-center">
+                        <div  class=" btn custom-button ">
+                            <a  href="https://github.com/EricUnternahr/SiteSolalim.git" target="_blank">
+                                <img th:src="@{/img/git.png}" alt="Git Logo" class="normal-image lienGIT">
+                                <img th:src="@{/img/git-hover.png}" alt="Image au survol" class="hover-image lienGIT">
+                                <img th:src="@{/img/git-active.png}" alt="Image au clic" class="active-image lienGIT"></a>
+                        </div>
+                    </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+
+<!--! FOOTER DE LA PAGE -->
+<footer class="bg-dark text-light text-center py-3">
+    <div class="container">
+        <p>&copy; 2023 Eric UNTERNAHR. Tous droits réservés.</p>
+        <p><a th:href="@{mentions-legales}" class="text-light">Mentions légales</a></p>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
 
 </body>
 </html>
