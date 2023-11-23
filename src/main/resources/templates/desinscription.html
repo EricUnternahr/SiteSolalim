@@ -1,32 +1,30 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>SOLALIM Desinscription</title>
-    <link th:src="@{/img/faviconSolalim.png}" rel="icon" sizes="96x96" type="image/png">
-    <!-- JAVSCRIPT -->
-    <script async th:src="@{/js/desinscription.js}"></script>
-    <script async th:src="@{/js/ScriptCommun.js}"></script>
-    <!-- Font ROBOTO -->
-    <link href="https://fonts.googleapis.com" rel="preconnect">
-    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <!-- font OSWALD -->
-    <link href="https://fonts.googleapis.com" rel="preconnect">
-    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <!-- feuille de style CSS -->
-    <link th:href="@{/css/desinscription.css}" rel="stylesheet">
-    <link th:href="@{/css/StyleCommun.css}" rel="stylesheet">
-    <!-- BOOTSTRAP -->
-    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet">
-    <!-- Librairie AWESONE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLALIM Désinscription</title>
+    <link rel="icon" type="image/png" sizes="96x96" th:href="@{/img/faviconSolalim.png}">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Oswald&display=swap" rel="stylesheet">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" th:href="@{/css/desinscription.css}">
+    <link rel="stylesheet" th:href="@{/css/StyleCommun.css}">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
 
+    <!-- JavaScript -->
+    <script async th:src="@{/js/desinscription.js}"></script>
+    <script async th:src="@{/js/ScriptCommun.js}"></script>
 </head>
+
 <body class="body-dark">
 <!--!PAGE PRINCIPALE-->
 
@@ -36,7 +34,7 @@
 
     <div class="row " id="rowPage">
 
-        <div class="container">
+        <header class="container">
             <div class="row text-end m-2">
                 <div class=" d-flex justify-content-end align-items-center">
                     <input id="switch" type="checkbox"><label for="switch" id="butSwitch"></label>
@@ -53,11 +51,11 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </header>
 
         <!--! CONTAINER APPLI ET COTE -->
 
-        <div class="container">
+        <main class="container">
             <div class="row justify-content-center flex-nowrap">
 
                 <!--! PAGEGAUCHE DE L'APPLI -->
@@ -196,7 +194,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
     </div>
 </div>
 

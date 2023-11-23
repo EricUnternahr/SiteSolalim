@@ -9,6 +9,7 @@
     justify-content: center;
     text-align: center;
     color:#773c0a ;
+
 }/*! IMAGES CACHEES SUR LES COTES */
 #thumbnailDiagSeq {
     visibility: hidden;
@@ -24,7 +25,6 @@
 
     transform: scale(1);
 }
-
 
 .fullscreen {
     width: 100%;
@@ -52,28 +52,23 @@
     color: #f1f0f0;
     height: 200px;
     width: 150px;
-
 }
 
 #CompoteImg {
     border-radius: 21px;
     height: auto;
     width: 145px;
-
 }
 
 #PixieImg {
     border-radius: 21px;
     height: 80px;
     width: auto;
-
 }
 
 #PetillantImg {
     border-radius: 21px;
     height: 84px;
-
-
 }
 
 #OpalImg {
@@ -83,7 +78,6 @@
 }
 
 .description {
-
     color: #180900;
     font-size: 14px;
     line-height: 5px;
@@ -111,13 +105,12 @@ select {
     border: 3px solid #efedeb;
     border-radius: 25px;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
-    margin-top: 10px;
+    margin-left: 10px;
     color: #f1f0f0;
     height: 70px;
     width: 150px;
     line-height: 10px;
     text-align: center;
-
 }
 
 #TotalCommande {

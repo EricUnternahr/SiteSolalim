@@ -1,30 +1,28 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SOLALIM accueil</title>
     <link rel="icon" type="image/png" sizes="96x96" th:src="@{/img/faviconSolalim.png}">
-    <!-- Font ROBOTO -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <!-- font OSWALD -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Polices de caractères -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <!-- feuille de style CSS -->
+
+    <!-- Feuilles de style CSS -->
     <link rel="stylesheet" th:href="@{/css/accueil.css}">
     <link rel="stylesheet" th:href="@{/css/StyleCommun.css}">
-    <!-- BOOTSTRAP -->
+
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <!-- Librairie AWESONE -->
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <!-- JAVSCRIPT -->
-    <script async  th:src="@{/js/accueil.js}"></script>
-    <script async  th:src="@{/js/ScriptCommun.js}"></script>
+
+    <!-- JavaScript -->
+    <script async th:src="@{/js/accueil.js}"></script>
+    <script async th:src="@{/js/ScriptCommun.js}"></script>
 </head>
 
 <body class="body-dark">
@@ -33,30 +31,30 @@
 <div id="page" class = "container ">
 
     <!--! HEADER PAGE PRINCIPALE -->
+    <header>
+        <div id="rowPage" class="row">
 
-    <div id="rowPage" class="row">
-
-        <div class="container ">
-            <div class="row text-end m-2">
-                <div class=" d-flex justify-content-end align-items-center">
-                    <input type="checkbox" id="switch" ><label id="butSwitch" for="switch"></label>
-                </div>
-            </div>
-            <div id="ContainerTitrePage" class="container col-12">
-                <div class="row">
-                    <div class="col-4 text-end">
-                        <a th:href="@{accueil}"><img id="logosola" th:src="@{/img/logoSolalim.png}" alt="logo"></a>
-                    </div>
-                    <div class="col-8">
-                        <h1 class="d-flex align-items-center pageTitre" >APPLICATION SOLALIM</h1>
+            <div class="container ">
+                <div class="row text-end m-2">
+                    <div class=" d-flex justify-content-end align-items-center">
+                        <input type="checkbox" id="switch" ><label id="butSwitch" for="switch"></label>
                     </div>
                 </div>
+                <div id="ContainerTitrePage" class="container col-12">
+                    <div class="row">
+                        <div class="col-4 text-end">
+                            <a th:href="@{accueil}"><img id="logosola" th:src="@{/img/logoSolalim.png}" alt="logo"></a>
+                        </div>
+                        <div class="col-8">
+                            <h1 class="d-flex align-items-center pageTitre" >APPLICATION SOLALIM</h1>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-
+    </header>
         <!--! CONTAINER APPLI ET COTE -->
 
-        <div class="container">
+        <main class="container">
             <div class="row justify-content-center flex-nowrap">
 
                 <!--! PAGE GAUCHE DE L'APPLI -->
@@ -131,7 +129,7 @@
                     <!--*PAGE D ACCUEIL MON COMPTE -->
                     <div class="container mt-4 ">
                         <div class="row ">
-                            <div class=col-8>
+                            <div class="ms-2 col-7">
                                 <p class="titre">Accueil</p>
                                 <h3 class ="identite" th:text="${user != null ? user.prenom : ''}">Prénom par défaut</h3>
                                 <h3 class ="identite" th:text="${user != null ? user.nom : ''}">Nom par défaut</h3>
@@ -233,7 +231,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
     </div>
 </div>
 

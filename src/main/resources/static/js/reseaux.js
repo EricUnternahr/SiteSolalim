@@ -1,6 +1,6 @@
 // ! BOITES RESEAUX
 
-function createNewDiv(idImage, imageSrc, title, description, clic) {
+function createNewDiv(idImage, imageSrc, title, description) {
     const newDiv = document.createElement('div');
     newDiv.className = "col-12 mx-auto";
 
@@ -28,16 +28,12 @@ function createNewDiv(idImage, imageSrc, title, description, clic) {
     p.textContent = description;
     descriptionDiv.appendChild(p);
 
-    const a = document.createElement('a');
-    a.href = "#";
-    maBoite.appendChild(a);
-
     const button = document.createElement('button');
     button.id = "btonForm";
     button.type = "submit";
     button.className = "btn custom-button";
-    button.addEventListener('click', window[clic]);
-    a.appendChild(button);
+    button.onclick=redirigerVersInscription;
+    maBoite.appendChild(button);
 
     const imgNormal = document.createElement('img');
     imgNormal.src = "/img/boutons/inscrire.png";
@@ -77,7 +73,7 @@ const newDivBiotineuses = createNewDiv(
     '/img/reseau/les_biotineuses.png',
     'Les Biotineuses',
     'Adhérents du groupement d\'achat de Lagrasse et villages des alentours. Lieux et dates de distribution à Pradelles en Val, Lagrasse, Serviès (relatifs aux commandes.)',
-    'redirigerVersInscription()'
+    
     );
 
 // Original Div  #BoitePotsPotes
@@ -88,7 +84,7 @@ const newDivPotsPotes = createNewDiv(
     '/img/reseau/favicon.png',
     'Les POT-POTES',
     'Capendu, Douzens, Barbaira, Marseillette Les pots potes de l Alaric vous proposent une alternative à la grande distribution : écologique, économique, éthique et conviviale !',
-    'redirigerVersInscription()'
+    
     );
 
 // Original Div #BoiteLoco
@@ -99,7 +95,7 @@ const newDivLoco = createNewDiv(
     '/img/reseau/locominges.png',
     'LOCO MINGES',
     'Saint-Gaudens, 31 Le Loco Minges est une épicerie coopérative où trouver des produits locaux de saison, sélectionnés par et pour les Loco Mangeurs.',
-    'redirigerVersInscription()'
+    
 );
 // redirige vers formulaire d'inscription
 function redirigerVersInscription() {
@@ -124,7 +120,6 @@ function toggleThumbnailOnClick(triggerElement, thumbnailElement) {
         isThumbnailVisible = !isThumbnailVisible;
     });
 }
-
 
 // //! AGRANDIR IMAGE A 100%
 function activerModePleinEcran(imgMiniature, imgPleinEcran) {

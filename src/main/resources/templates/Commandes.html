@@ -1,31 +1,30 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SOLALIM Ma Commande</title>
-    <link th:src="@{/img/faviconSolalim.png}" rel="icon" sizes="96x96" type="image/png">
-    <!-- Font ROBOTO -->
-    <link href="https://fonts.googleapis.com" rel="preconnect">
-    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <!-- font OSWALD -->
-    <link href="https://fonts.googleapis.com" rel="preconnect">
-    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link rel="icon" type="image/png" sizes="96x96" th:href="@{/img/faviconSolalim.png}">
+
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <!-- feuille de style CSS -->
-    <link th:href="@{/css/Commandes.css}" rel="stylesheet"> rel="stylesheet">
-    <link th:href="@{/css/StyleCommun.css}" rel="stylesheet"> rel="stylesheet">
-    <!-- BOOTSTRAP -->
-    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet">
-    <!-- Librairie AWESONE -->
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" th:href="@{/css/Commandes.css}">
+    <link rel="stylesheet" th:href="@{/css/StyleCommun.css}">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" rel="stylesheet">
+
+    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
-    <!-- JAVSCRIPT -->
+
+    <!-- JavaScript -->
     <script async th:src="@{/js/Commandes.js}"></script>
     <script async th:src="@{/js/ScriptCommun.js}"></script>
 </head>
+
 <body class="body-dark">
 <!--!PAGE PRINCIPALE-->
 
@@ -35,7 +34,7 @@
 
     <div class="row " id="rowPage">
 
-        <div class="container ">
+        <header class="container ">
             <div class="row text-end m-2">
                 <div class=" d-flex justify-content-end align-items-center">
                     <input id="switch" type="checkbox"><label for="switch" id="butSwitch"></label>
@@ -52,11 +51,11 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </header>
 
         <!--! CONTAINER APPLI ET COTE -->
 
-        <div class="container">
+        <main class="container">
             <div class="row justify-content-center flex-nowrap">
 
                 <!--! PAGEGAUCHE DE L'APPLI -->
@@ -128,9 +127,9 @@
                     <!--*COMMANDE-->
                     <div class="container">
                         <div class="row ">
-                            <div class=col-8>
+                            <div class="ms-4 col-7">
                                 <p class="titre">Commande</p>
-                                <h2>Les Ares Verts</h2>
+                                <h3>Les Ares Verts</h3>
                                 <p class="description">Date butoire le 12/02/2024</p>
                             </div>
                             <div class="col-4">
@@ -139,8 +138,8 @@
                         </div>
                     </div>
                     <!--Boites produits-->
-                    <div class="container">
-                        <div id="containBoite">
+                    <div id="containBoite">
+                        <div class="container">
                             <div class="row">
                             
                                 <div class="col-6 ps-4">
@@ -285,23 +284,24 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
+                    
+                        <div class="container">
+                            <div class="row">
 
-                            <div class="col-6 mt-2 p-0">
-                                <!-- BOUTON PERSO -->
-                                <button class="btn custom-button" onclick="redirigerVersLesCommandes()" type="button">
-                                    <img alt="Image" class="normal-image" th:src="@{/img/boutons/valider.png}">
-                                    <img alt="Image au survol" class="hover-image"
-                                    th:src="@{/img/boutons/validerHover.png}">
-                                    <img alt="Image au clic" class="active-image"
-                                    th:src="@{/img/boutons/validerActive.png}">
-                                </button>
-                            </div>
-                            <div class="col-6 ms-3 mt-2 p-2" id="TotalDeLaCom">
-                                <P>TOTAL :</P>
-                                <p id="TotalCommande"></p>
+                                <div class="col-6 mt-2 p-0">
+                                    <!-- BOUTON PERSO -->
+                                    <button class="ms-1 btn custom-button" onclick="redirigerVersLesCommandes()" type="button">
+                                        <img alt="Image" class="normal-image" th:src="@{/img/boutons/valider.png}">
+                                        <img alt="Image au survol" class="hover-image"
+                                        th:src="@{/img/boutons/validerHover.png}">
+                                        <img alt="Image au clic" class="active-image"
+                                        th:src="@{/img/boutons/validerActive.png}">
+                                    </button>
+                                </div>
+                                <div class="col-6  mt-2 p-2" id="TotalDeLaCom">
+                                    <P>TOTAL :</P>
+                                    <p id="TotalCommande"></p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -313,7 +313,7 @@
 
 
             </div>
-        </div>
+        </main>
     </div>
 </div>
 
