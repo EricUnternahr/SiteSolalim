@@ -18,22 +18,3 @@ function toggleThumbnailOnClick(triggerElement, thumbnailElement) {
 }
 
 
-//! AGRANDIR IMAGE A 100%
-function activerModePleinEcran(imgMiniature, imgPleinEcran) {
-    document.addEventListener('fullscreenchange', () => {
-        if (!document.fullscreenElement) {
-            imgPleinEcran.style.display = 'none';
-        }
-    });
-    imgMiniature.addEventListener('click', () => {
-        if (document.fullscreenEnabled) {
-            imgPleinEcran.style.display = 'flex';
-            imgPleinEcran.requestFullscreen();
-        }
-    });
-}
-
-// IMAGE TABLE
-
-activerModePleinEcran(document.getElementById('thumbnailPersonnas'), document.getElementById('imgPersonnas'));
-toggleThumbnailOnClick(document.querySelector("#lesPotsPotes"), document.querySelector("#thumbnailPersonnas"));

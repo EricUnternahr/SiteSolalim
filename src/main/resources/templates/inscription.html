@@ -1,24 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>SOLALIM Inscription</title>
-    <link rel="icon" type="image/png" sizes="96x96" th:href="@{/img/faviconSolalim.png}">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Oswald&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 
-    <!-- CSS Stylesheets -->
+<!-- Feuilles de style CSS -->
     <link rel="stylesheet" th:href="@{/css/inscription.css}">
-    <link rel="stylesheet" th:href="@{/css/StyleCommun.css}">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
 
     <!-- JavaScript -->
     <script async th:src="@{/js/inscription.js}"></script>
@@ -146,10 +139,8 @@
                     </div>
                     <div class="container ">
                         <div class="row ">
-
                             <div class=" ms-2 container  text-center custom-scrollbar-y " id="containBoite">
                                 <form th:action="@{/inscription}" th:object="${user}" method="post" onsubmit="return validateForm()" novalidate>
-
                                     <div>                                    
                                         <div class="input-container mt-2">
                                             <input type="text" id="nom" th:field="*{nom}" required/>
@@ -158,7 +149,6 @@
                                             </span>
                                         </div>
                                     </div>
-                                
                                     <div>
                                         <div class="input-container">
                                             <input type="text" id="prenom" th:field="*{prenom}" required spellcheck="false"/>
@@ -166,8 +156,7 @@
                                                 Prénom
                                             </span>
                                         </div>
-                                    </div>
-                                    
+                                    </div>                                    
                                     <div>
                                         <div id="errorEmail" class="error-message" style="display: none;">
                                             Veuillez saisir une adresse e-mail valide (format : xxxxx@xxx.xx).
@@ -182,8 +171,7 @@
                                             </span>
                                             
                                         </div>
-                                    </div>
-                                    
+                                    </div>                                    
                                     <div>                                
                                         <div id="errorPassword" class="error-message" style="display: none;">
                                             Le mot de passe doit contenir au moins 8 caractères, une majuscule et un chiffre.
@@ -195,8 +183,7 @@
                                                 Mot de passe
                                             </span>
                                         </div>
-                                    </div>
-                                
+                                    </div>                                
                                     <div>                                        
                                         <div id="errorConfirmPassword" class="error-message" style="display: none;">
                                             Les mots de passe ne correspondent pas.
@@ -207,27 +194,21 @@
                                                 Repetez le mot de passe
                                             </span>
                                         </div>
-                                    </div>
-                                    
-                                    <div>
-                                        
+                                    </div>                                    
+                                    <div>                                        
                                         <div id="errorPhoneNumber" class="error-message" style="display: none;">
                                             Le numéro de téléphone doit avoir exactement 10 chiffres.
                                         </div>
                                         <div th:if="${errorDuplicatePhoneNumber}" id="errorDuplicatePhoneNumber" class="error-message" >
                                             Ce numéro de téléphone est déjà utilisé.
                                         </div>
-
                                         <div class="input-container">
                                             <input type="text" id="numeroTelephone" th:field="*{numeroTelephone}" required/>
                                             <span class="placeholder">
                                                 Numéro de téléphone
-                                            </span>
-                                            
-
+                                            </span>                                         
                                         </div>
-                                    </div>
-                                    
+                                    </div>                                    
                                     <div>                                        
                                         <div class="input-container">
                                             <input type="text" id="adresse" th:field="*{adresse}" spellcheck="false" required/>
@@ -235,10 +216,7 @@
                                                 Adresse
                                             </span>
                                         </div>
-                                    </div>
-                                    
-                                    
-
+                                    </div>                                    
                                     <div>                                        
                                         <div class="input-container">
                                             <input type="text" id="codePostal" th:field="*{codePostal}" spellcheck="false" required/>
@@ -246,8 +224,7 @@
                                                 Code postal
                                             </span>
                                         </div>
-                                    </div>
-                                    
+                                    </div>                                    
                                     <div>                                        
                                         <div class="input-container">
                                             <input type="text" id="ville"  th:field="*{ville}" spellcheck="false" required/>
@@ -255,9 +232,7 @@
                                                 Ville
                                             </span>
                                         </div>
-                                    </div>
-                                    
-                                    
+                                    </div>                                    
                                     <div class="row">
                                         <div class="col-12 text-center">
                                             <button class="btn custom-button"  type="submit">
@@ -265,7 +240,7 @@
                                                 <img alt="Image au survol" class="hover-image"
                                                     th:src="@{/img/boutons/validerHover.png}">
                                                 <img alt="Image au clic" class="active-image"
-                                                    th:src="@{/img/boutons/valider.png}">
+                                                    th:src="@{/img/boutons/validerActive.png}">
                                             </button>
                                         </div>
                                     </div>
@@ -299,13 +274,6 @@
 </div>
 
 <!--! FOOTER DE LA PAGE -->
-<footer class="bg-dark text-light text-center py-3">
-    <div class="container">
-        <p>&copy; 2023 Eric UNTERNAHR. Tous droits réservés.</p>
-        <p><a th:href="@{mentions-legales}" class="text-light">Mentions légales</a></p>
-    </div>
-</footer>
-
 
 <script crossorigin="anonymous"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

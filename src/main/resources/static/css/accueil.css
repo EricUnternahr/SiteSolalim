@@ -4,7 +4,7 @@
 }
 
 /*! IMAGES CACHEES SUR LES COTES */
-#thumbnailDiagSeq {
+#thumbnailUseCase {
     visibility: hidden;
     transition: transform 0.5s ease-in-out;
     

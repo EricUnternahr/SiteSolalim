@@ -1,8 +1,10 @@
 
+
 /*!BOITE CONTENANT LE FORM*/
 #containBoite {
     overflow-y: scroll;
     max-height: 470px;
+    margin-left: 15px;
 }
 
 /* *Cache la scrollbar avec Firefox */
@@ -16,6 +18,9 @@
 #containBoite::-webkit-scrollbar {
     width: 0;
     background: transparent;
+}
+#btonForm{
+    margin-left: -15px;
 }
 
 /*!CONFIRMATION*/
@@ -70,7 +75,7 @@
     max-height: 100%;
 }
 
-/*!BOITEDES ERRORS*/
+/*!BOITE DES ERRORS*/
 #newDiv {
     background-color: #cf1111;
     border: 3px solid #f1f0f0;
@@ -83,5 +88,4 @@
     padding: 5px;
     font-size:20px;
     font-weight: bolder;
-
 }

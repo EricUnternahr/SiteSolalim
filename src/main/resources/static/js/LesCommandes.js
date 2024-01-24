@@ -45,6 +45,7 @@ toggleThumbnailOnClick(document.querySelector("#lesPotsPotes"), document.querySe
 document.addEventListener("DOMContentLoaded", function () {
     const TotCommande = localStorage.getItem("TotalCommande")
     if (TotCommande != null && TotCommande != 0) {
-        document.getElementById("commandeAresVerts").innerText = `Ares Verts pour une commande de ${TotCommande} € `;
+        document.getElementById("commandeAresVerts").textContent = `Ares Verts pour une commande de ${TotCommande} € `;
     }
 });
+

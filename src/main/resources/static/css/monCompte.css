@@ -1,8 +1,4 @@
 /*! IMAGES CACHEES SUR LES COTES */
-#thumbnailPersonnas {
-    visibility: hidden;
-    transition: transform 0.5s ease-in-out;
-}
 
 
 .thumbnail:hover {

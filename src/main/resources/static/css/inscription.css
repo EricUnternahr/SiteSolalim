@@ -1,4 +1,4 @@
-/*!BOITE CONTENANT LES BOITES RESEAUX*/
+/*!BOITE LE FORMULAIRE*/
 #containBoite {
     overflow-y: scroll;
     max-height: 580px;
@@ -8,7 +8,6 @@
 .custom-scrollbar-y {
     scrollbar-color: #007bff00 #f1f1f100;
     height: 600px;
-
 }
 
 /* *Cache la scrollbar avec Chrome */
@@ -18,14 +17,12 @@
 }
 
 /*!INPUTS COORDONNES*/
-
 label{
     color:antiquewhite;
 }
 div.input-container {
     position: relative;
 }
-
 div.input-container input {
     font-size: 1rem;
     color: #0c0c0c;
@@ -37,7 +34,6 @@ div.input-container input {
     border: 2px solid #D9D9D9;
     outline: none;
 }
-
 div.input-container span.placeholder {
     position: absolute;
     margin: 2px 0;
@@ -53,22 +49,18 @@ div.input-container span.placeholder {
     background: none;
     pointer-events: none;
 }
-
 div.input-container input:valid+span.placeholder,
 div.input-container input:focus+span.placeholder {
     transform: scale(0.8) translateY(-27px);
     
 }
-
 div.input-container input:focus {
     color: #284B63;
     border-color: #284B63;
 }
-
 div.input-container input:focus+span.placeholder {
     color: #284B63;
 }
-
 /*REMERCIEMENT*/
 #remerciement{
     font-size: 35px;
@@ -110,7 +102,6 @@ div.input-container input:focus+span.placeholder {
 
     transform:  scale(1);
 }
-
 .fullscreen {
     width: 100%;
     height: 100%;
@@ -122,7 +113,6 @@ div.input-container input:focus+span.placeholder {
     justify-content: center;
     align-items: center;
 }
-
 .fullscreen img {
     max-width: 100%;
     max-height: 100%;

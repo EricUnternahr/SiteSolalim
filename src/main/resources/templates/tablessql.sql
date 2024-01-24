@@ -1,49 +1,80 @@
--- Création de la table "RESEAUX" si elle n'existe pas
-CREATE TABLE IF NOT EXISTS RESEAUX (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    Nom VARCHAR(50) NOT NULL,
-    designation VARCHAR(255) NOT NULL,
-    coordonnees VARCHAR(255) NOT NULL
-);
+CREATE TABLE IF NOT EXISTS roles(
+    Id_roles INT,
+    nom_roles VARCHAR(50),
+    PRIMARY KEY(Id_roles)
+)Engine=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Création de la table "DBUSER" (USER) si elle n'existe pas
-CREATE TABLE IF NOT EXISTS DBUSER (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nom VARCHAR(50) NOT NULL,
-    prenom VARCHAR(50) NOT NULL,
-    adresse_mail VARCHAR(100) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
-    adresse VARCHAR(100),
-    code_postal VARCHAR(10),
-    ville VARCHAR(50),
-    numero_telephone VARCHAR(15) NOT NULL,
-    role VARCHAR(20) NOT NULL DEFAULT 'user',
-    reseaux INT, -- Colonne de référence
-    FOREIGN KEY (reseaux) REFERENCES RESEAUX(id)
-);
+CREATE TABLE IF NOT EXISTS produit(
+    Id_produit INT,
+    nom_produit VARCHAR(50),
+    prix_produit REAL,
+    libele_produit TEXT,
+    unite_produit VARCHAR(50),
+    quota_produit REAL,
+    quantum_produit REAL,
+    poids_produit REAL,
+    PRIMARY KEY(Id_produit)
+)Engine=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Création de la table "COMMANDES" si elle n'existe pas
-CREATE TABLE IF NOT EXISTS COMMANDES (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    total_commande DECIMAL(10, 2) NOT NULL,
-    date_heure_commande DATETIME,
-    total_produits_quantite INT,
-    utilisateur INT,
-    reseaux INT,
-    FOREIGN KEY (utilisateur) REFERENCES DBUSER(id),
-    FOREIGN KEY (reseaux) REFERENCES RESEAUX(id)
-);
+CREATE TABLE IF NOT EXISTS commande(
+    Id_commande INT,
+    date_commande DATETIME,
+    PRIMARY KEY(Id_commande)
+)Engine=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Création de la table "PRODUIT" si elle n'existe pas
-CREATE TABLE IF NOT EXISTS PRODUIT (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nom VARCHAR(100) NOT NULL,
-    designation VARCHAR(255),
-    photo VARCHAR(255),
-    prix DECIMAL(10, 2) NOT NULL,
-    unites VARCHAR(20) NOT NULL,
-    quantite INT,
-    quantum INT,
-    quota INT,
-    poids DECIMAL(10, 2)
-);
+CREATE TABLE IF NOT EXISTS reseau(
+    Id_reseau INT AUTO_INCREMENT,
+    nom_reseau VARCHAR(50),
+    description_reseau TEXT,
+    PRIMARY KEY(Id_reseau)
+)Engine=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS utilisateur(
+    Id_utilisateur INT,
+    nom_utilisateur VARCHAR(50),
+    prenom_utilisateur VARCHAR(50),
+    mail_utilisateur VARCHAR(50),
+    mot_passe_utilisateur VARCHAR(100),
+    telephone_utilisateur VARCHAR(10),
+    numero_rue_utilisateur INT,
+    nom_rue_utilisateur VARCHAR(50),
+    code_postal_utilisateur INT,
+    ville_utilisateur VARCHAR(50),
+    Id_roles INT NOT NULL,
+    PRIMARY KEY(Id_utilisateur),
+    UNIQUE(mail_utilisateur),
+    FOREIGN KEY(Id_roles) REFERENCES roles(Id_roles)
+)Engine=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS ajouter(
+    Id_produit INT,
+    Id_commande INT,
+    quantite REAL,
+    PRIMARY KEY(Id_produit, Id_commande),
+    FOREIGN KEY(Id_produit) REFERENCES produit(Id_produit),
+    FOREIGN KEY(Id_commande) REFERENCES commande(Id_commande)
+)Engine=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS commander(
+    Id_utilisateur INT,
+    Id_commande INT,
+    PRIMARY KEY(Id_utilisateur, Id_commande),
+    FOREIGN KEY(Id_utilisateur) REFERENCES utilisateur(Id_utilisateur),
+    FOREIGN KEY(Id_commande) REFERENCES commande(Id_commande)
+)Engine=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS creer(
+    Id_utilisateur INT,
+    Id_commande INT,
+    PRIMARY KEY(Id_utilisateur, Id_commande),
+    FOREIGN KEY(Id_utilisateur) REFERENCES utilisateur(Id_utilisateur),
+    FOREIGN KEY(Id_commande) REFERENCES commande(Id_commande)
+)Engine=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS consulter(
+    Id_utilisateur INT,
+    Id_reseau INT,
+    PRIMARY KEY(Id_utilisateur, Id_reseau),
+    FOREIGN KEY(Id_utilisateur) REFERENCES utilisateur(Id_utilisateur),
+    FOREIGN KEY(Id_reseau) REFERENCES reseau(Id_reseau)
+)Engine=InnoDB DEFAULT CHARSET=utf8mb4;

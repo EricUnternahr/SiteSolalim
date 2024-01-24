@@ -9,14 +9,11 @@
 }
 /*!AVANT L'IMAGE*/
 #celluleVide {
-    height: 300px;
+    height: 40px;
 }
 
 /*! IMAGES CACHEES SUR LES COTES */
-#thumbnailArbo {
-    visibility: hidden;
-    transition: transform 0.5s ease-in-out;
-}
+
 #thumbtablesDBUser {
     visibility: hidden;
     transition: transform 0.5s ease-in-out;
@@ -34,6 +31,12 @@
     transform:  scale(1);
 }
 
+#thumbnailPersonnas {
+    visibility: hidden;
+    transition: transform 0.5s ease-in-out;
+}
+
+
 #thumbnailMoodboard {
     visibility: hidden;
     transition: transform 0.5s ease-in-out;
@@ -43,10 +46,6 @@
     transition: transform 0.5s ease-in-out;
 }
 
-#thumbnailPerso {
-    visibility: hidden;
-    transition: transform 0.5s ease-in-out;
-}
 
 .fullscreen {
     width: 100%;

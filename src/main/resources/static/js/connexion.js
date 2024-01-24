@@ -48,12 +48,19 @@ toggleThumbnailOnClick(document.querySelector("#logo"), document.querySelector("
 activerModePleinEcran(document.getElementById('thumbtablesDBUser'), document.getElementById('imgDBUser'));
 toggleThumbnailOnClick(document.querySelector("#connect"), document.querySelector("#thumbtablesDBUser"));
 
+// IMAGE TABLE
+activerModePleinEcran(document.getElementById('thumbnailPersonnas'), document.getElementById('imgPersonnas'));
+toggleThumbnailOnClick(document.querySelector("#logo"), document.querySelector("#thumbnailPersonnas"));
+
 //! CLICK PAR ENTREE
 document.addEventListener("keyup", function (e) {
     if (e.key === 'Enter') {
         document.getElementById("btonForm").click();
     }
 });
+
+
+
 
 
 

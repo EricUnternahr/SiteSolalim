@@ -25,6 +25,22 @@ toggleRepeatPassword.addEventListener('click', () => {
     toggleRepeatPassword.querySelector('i').classList.toggle('bi-eye');
 });
 
+//!VALIDATION DES CARACTERES ET FORMES
+
+function validatePassword() {
+    const passwordInput = document.getElementById('password');
+    const passwordRegex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
+    const errorPassword = document.getElementById('errorPassword');
+    if (!passwordRegex.test(passwordInput.value)) {
+        errorPassword.style.display = 'block';
+        return false;
+    }
+    errorPassword.style.display = 'none';
+    return true;
+}
+
+
+
 //!MESSAGE D'ENREGISTREMENT ET REDIRECTION
 document.addEventListener("DOMContentLoaded", function () {
     if (new URLSearchParams(window.location.search).get("success") === "true") {

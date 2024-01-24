@@ -45,8 +45,8 @@ function activerModePleinEcran(imgMiniature, imgPleinEcran) {
 }
 
 // IMAGE SEQUENCE
-activerModePleinEcran(document.getElementById('thumbnailDiagSeq'), document.getElementById('diagSeq'));
-toggleThumbnailOnClick(document.querySelector("#lesPotsPotes"), document.querySelector("#thumbnailDiagSeq"));
+activerModePleinEcran(document.getElementById('thumbnailUseCase'), document.getElementById('UseCase'));
+toggleThumbnailOnClick(document.querySelector("#lesPotsPotes"), document.querySelector("#thumbnailUseCase"));
 
 // IMAGE ARBO
 activerModePleinEcran(document.getElementById('thumbnailArbo'), document.getElementById('imgArbo'));

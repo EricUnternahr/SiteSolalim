@@ -1,10 +1,10 @@
 /*!GESTION DE LA PAGE*/
 
-
 body {
     font-family: 'Roboto', sans-serif;
     min-height: 100vh; 
     position: relative;
+    caret-color: transparent;
 
 }
 
@@ -52,9 +52,7 @@ footer {
 #boxApp {
     width: 450px; 
     height: 805px;
-
     background-image: url('../img/fondAppli.png');
-
     display: flex;
     flex-direction: column;
     align-items: flex-end; 
@@ -78,7 +76,7 @@ footer {
     font-family: 'Oswald', sans-serif; 
     }
 
-/*IDENTIFIANT ET LOGO RESEAU*/
+/*!IDENTIFIANT ET LOGO RESEAU*/
 .identite {
     color : rgb(46, 27, 1);
     font-size: 30px;
@@ -148,10 +146,8 @@ footer {
 
 }
 
-
-
 /*! BOUTONS PERSO EN HOVER ACTIVE NORMAL */
-.btn {
+.custom-button {
     border-width: 0 !important;
 }
 
@@ -181,10 +177,6 @@ footer {
 #inscription {
     color : rgb(5, 95, 169);
 }
-
-
-
-
 
 /*!BOUTON SWITCH*/
 /* on cache le bouton check */
@@ -233,7 +225,28 @@ input:checked + #butSwitch:after {
 	width: 40px;
 }
 
+/* ! CAROUSEL */
+#slideshow {
+    width: 350px;
+    height: 350px;
+    position: relative;
+    overflow: hidden; 
+}
 
+.slideshow-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slideshow-item img {
+    width: 300px;
+    height: auto;
+}
 
 @media screen and (max-height: 1060px) {
     footer {
